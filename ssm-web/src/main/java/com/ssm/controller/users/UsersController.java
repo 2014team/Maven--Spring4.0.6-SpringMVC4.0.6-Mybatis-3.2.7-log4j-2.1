@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ssm.common.utils.BeanUtil;
 import com.ssm.model.users.domain.UsersDO;
-import com.ssm.model.users.dto.UsersDTO;
+import com.ssm.model.users.vo.UsersVO;
 import com.ssm.service.users.UsersService;
 
 @Controller
@@ -19,9 +19,9 @@ public class UsersController {
 	UsersService usersService;
 	
 	 @RequestMapping("/insert")
-	 public String insert(UsersDTO usersDTO) {
+	 public String insert(UsersVO usersVO) {
 		 UsersDO usersDO = new UsersDO();
-		 BeanUtil.coverBean2Bean(usersDTO, usersDO);
+		 BeanUtil.coverBean2Bean(usersVO, usersDO);
 		 try {
 			 //usersService.save(usersDO);
 			//为了测试事物;
